@@ -31,7 +31,7 @@ This is a simple REST API built with Node.js and PostgreSQL that calculates EMI 
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/vai-sys/EMI-endpoint-.git
+   git clone https://github.com/yourusername/emi-calculator.git
    ```
 
 2. **Navigate to the Project Directory and Install Dependencies**
@@ -61,13 +61,25 @@ This is a simple REST API built with Node.js and PostgreSQL that calculates EMI 
    CREATE DATABASE emi_calculator_db;
    ```
 
-5. **Run the SQL Script to Create Tables**
+5. **Create the Required Table**
 
-   Execute the provided SQL script (`database.sql`) to create the required tables in the database:
+   Execute the following SQL script to create the required table in the database:
 
-   ```bash
-   psql -U your_pg_username -d emi_calculator_db -f database.sql
+   ```sql
+   CREATE TABLE emis (
+     id SERIAL PRIMARY KEY,
+     loan_amount DECIMAL NOT NULL,
+     interest_rate DECIMAL NOT NULL,
+     loan_tenure_months INTEGER NOT NULL,
+     emi DECIMAL NOT NULL,
+     prepayment_amount DECIMAL DEFAULT NULL,
+     remaining_balance DECIMAL NOT NULL,
+     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   );
    ```
+
+   You can run this script using the psql command-line tool or your preferred PostgreSQL client.
 
 6. **Run the Application**
 
