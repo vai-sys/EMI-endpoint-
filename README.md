@@ -31,7 +31,7 @@ This is a simple REST API built with Node.js and PostgreSQL that calculates EMI 
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/emi-calculator.git
+   git clone https://github.com/vai-sys/EMI-endpoint-.git
    ```
 
 2. **Navigate to the Project Directory and Install Dependencies**
